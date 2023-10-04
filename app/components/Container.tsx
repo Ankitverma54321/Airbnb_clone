@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react'
+import React from 'react';
 
 interface ContainerProps {
     children: React.ReactNode;
@@ -8,8 +8,8 @@ interface ContainerProps {
 
 const Container:React.FC<ContainerProps> = ({
     children
-}) => {
-  return (
+}) =>
+    (
     <div 
     className='
     max-w-[2520px]
@@ -23,6 +23,6 @@ const Container:React.FC<ContainerProps> = ({
         {children}
     </div>
   )
-}
+
 
 export default Container
