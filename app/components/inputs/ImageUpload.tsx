@@ -9,7 +9,7 @@
 import { CldUploadWidget } from "next-cloudinary";
 import Image from "next/image";
 import { useCallback } from "react";
-import { TbPhotoPlus } from 'react-icons/tb'
+import { TbPhotoPlus } from 'react-icons/tb';
 
 declare global {
   var cloudinary: any
@@ -38,8 +38,8 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
         maxFiles: 1
       }}
     >
-      {({ open }) => {
-        return (
+      {({ open }) =>
+      (
           <div
             onClick={() => open?.()}
             className="
@@ -77,8 +77,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
               </div>
             )}
           </div>
-        ) 
-    }}
+        )}
     </CldUploadWidget>
   );
 }
