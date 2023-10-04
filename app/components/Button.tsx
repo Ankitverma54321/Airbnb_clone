@@ -17,9 +17,8 @@ const Button: React.FC<ButtonProps> = ({
   disabled, 
   outline,
   small,
-  icon: Icon,
-}) => {
-  return ( 
+  icon: Icon
+}) => ( 
     <button
       disabled={disabled}
       onClick={onClick}
@@ -52,8 +51,7 @@ const Button: React.FC<ButtonProps> = ({
       )}
       {label}
     </button>
-   );
-}
+   )
  
 export default Button;
 
