@@ -12,8 +12,8 @@ const Heading:React.FC<HeadingProps> = ({
     title,
     subtitle,
     center
-}) => {
-  return (
+}) => 
+    (
     <div className={center ? 'text-center' :'text-start'}>
         <div className="text-2xl font-bold">
             {title}
@@ -24,6 +24,6 @@ const Heading:React.FC<HeadingProps> = ({
 
     </div>
   )
-}
+
 
 export default Heading
