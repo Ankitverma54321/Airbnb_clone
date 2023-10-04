@@ -25,8 +25,8 @@ const ListingReservation: React.FC<
   onSubmit,
   disabled,
   disabledDates
-}) => {
-  return ( 
+}) =>
+  ( 
     <div 
       className="
       bg-white 
@@ -80,7 +80,6 @@ const ListingReservation: React.FC<
         </div>
       </div>
     </div>
-   );
-}
+   )
  
 export default ListingReservation;
