@@ -1,6 +1,5 @@
 'use client';
 
-import { Value } from "@prisma/client/runtime/library";
 import { IconType } from "react-icons";
 
 interface CategoryInputProps {
@@ -17,8 +16,7 @@ const CategoryInput: React.FC<CategoryInputProps> = ({
     label,
     selected,
     onClick
-}) => {
-  return (
+}) => (
     <div
     onClick={() => onClick(label)}
     className={`
@@ -33,6 +31,5 @@ const CategoryInput: React.FC<CategoryInputProps> = ({
    </div>
     </div>
   )
-}
 
 export default CategoryInput

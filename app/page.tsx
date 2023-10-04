@@ -1,5 +1,4 @@
-import ClientOnly from "./components/ClientOnly"
-import Container from "./components/Container"
+import Container from "./components/Container";
 import EmptyState from "./components/EmptyState";
 import getListings, { IListingsParams } from "./actions/getListings";
 import ListingCard from "./components/listings/ListingCard";
@@ -35,8 +34,7 @@ const Home= async ({searchParams}:HomeProps) => {
       gap-8
 
       ">
-        {listings.map((listing) =>{
-          return (
+        {listings.map((listing) => (
             <div key={listing.id}>
               
               <ListingCard 
@@ -46,8 +44,7 @@ const Home= async ({searchParams}:HomeProps) => {
               />
               
             </div>
-          )
-        })}
+          ))}
 
       </div>
     </Container>

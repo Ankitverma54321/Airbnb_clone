@@ -2,8 +2,7 @@
 
 import { PuffLoader } from "react-spinners";
 
-const Loader = () => {
-  return ( 
+const Loader = () => ( 
     <div
     className="
       h-[70vh]
@@ -18,7 +17,6 @@ const Loader = () => {
         color="red"
       />
     </div>
-   );
-}
+   )
  
 export default Loader;
