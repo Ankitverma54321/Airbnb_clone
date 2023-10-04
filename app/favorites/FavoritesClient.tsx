@@ -12,8 +12,8 @@ interface FavoritesClientProps {
 const FavoritesClient: React.FC<FavoritesClientProps> = ({
   listings,
   currentUser
-}) => {
-  return (
+}) => 
+  (
     <Container>
       <Heading
         title="Favorites"
@@ -41,7 +41,6 @@ const FavoritesClient: React.FC<FavoritesClientProps> = ({
         ))}
       </div>
     </Container>
-   );
-}
+   )
  
 export default FavoritesClient;
