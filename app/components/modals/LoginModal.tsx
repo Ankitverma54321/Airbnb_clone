@@ -62,7 +62,7 @@ const LoginModal = () => {
     });
   }
 
-  const toggle = useCallback(() => {
+  const onToggle = useCallback(() => {
     loginModal.onClose();
     registerModal.onOpen();
   }, [loginModal, registerModal])
@@ -112,7 +112,7 @@ const LoginModal = () => {
       text-neutral-500 text-center mt-4 font-light">
         <p>First time using Airbnb?
           <span 
-            onClick={toggle} 
+            onClick={onToggle} 
             className="
               text-neutral-800
               cursor-pointer 

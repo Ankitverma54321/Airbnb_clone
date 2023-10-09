@@ -5,12 +5,10 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { toast } from "react-hot-toast";
 import { Range } from "react-date-range";
 import { useRouter } from "next/navigation";
-import { differenceInCalendarDays, eachDayOfInterval } from 'date-fns';
-
-import { Reservation } from "@prisma/client";
+import { differenceInDays, eachDayOfInterval } from 'date-fns';
 
 import useLoginModal from "@/app/hooks/useLoginModal";
-import { SafeListing, SafeUser, safeReservations } from "@/app/types";
+import { SafeListing, SafeReservation, SafeUser } from "@/app/types";
 
 import Container from "@/app/components/Container";
 import { categories } from "@/app/components/navbar/Categories";
@@ -25,7 +23,7 @@ const initialDateRange = {
 };
 
 interface ListingClientProps {
-  reservations?: safeReservations[];
+  reservations?: SafeReservation[];
   listing: SafeListing & {
     user: SafeUser;
   };
@@ -99,7 +97,7 @@ const ListingClient: React.FC<ListingClientProps> = ({
 
   useEffect(() => {
     if (dateRange.startDate && dateRange.endDate) {
-      const dayCount = differenceInCalendarDays(
+      const dayCount = differenceInDays(
         dateRange.endDate, 
         dateRange.startDate
       );
@@ -126,7 +124,7 @@ const ListingClient: React.FC<ListingClientProps> = ({
             imageSrc={listing.imageSrc}
             locationValue={listing.locationValue}
             id={listing.id}
-            currentUser={currentUser || null}
+            currentUser={currentUser}
           />
           <div 
             className="

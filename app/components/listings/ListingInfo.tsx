@@ -5,10 +5,9 @@ import { IconType } from "react-icons";
 
 import useCountries from "@/app/hooks/useCountries";
 import { SafeUser } from "@/app/types";
-import CategoryView from "./ListingCategory";
-
 
 import Avatar from "../Avatar";
+import ListingCategory from "./ListingCategory";
 
 const Map = dynamic(() => import('../Map'), { 
   ssr: false 
@@ -38,8 +37,8 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
   locationValue,
 }) => {
   const { getByValue } = useCountries();
-  
-  const coordinates = getByValue(locationValue);
+
+  const coordinates = getByValue(locationValue)?.latlng
 
   return ( 
     <div className="col-span-4 flex flex-col gap-8">
@@ -79,7 +78,7 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
       </div>
       <hr />
       {category && (
-        <CategoryView
+        <ListingCategory
           icon={category.icon} 
           label={category?.label}
           description={category?.description} 
@@ -91,7 +90,7 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
         {description}
       </div>
       <hr />
-      <Map  />
+      <Map center={coordinates} />
     </div>
    );
 }
